@@ -17,8 +17,8 @@ FlowBot can help you think through:
 
 ### Demo
 
-<video src="./docs/FlowBotDemo.mp4" controls playsinline width="100%">
-  <a href="./docs/FlowBotDemo.mp4">Download the demo video</a>
+<video src="./FlowBotDemo.mp4" controls playsinline width="100%">
+  <a href="./FlowBotDemo.mp4">Download the demo video</a>
 </video>
 
 ### What makes us unique:
