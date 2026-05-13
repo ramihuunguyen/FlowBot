@@ -1,6 +1,6 @@
 ### FlowBot
 
-**FlowBot** is an interactive chatbot that helps you compare how to get somewhere—transit, buses, biking, walking, and driving—in one place.
+**FlowBot** is an interactive chatbot that helps you compare how to get somewhere:transit, buses, biking, walking, and driving in one place.
 
 This bot is built by our team, EarlyEd Engine Team.
 
@@ -17,9 +17,9 @@ FlowBot can help you think through:
 
 ### Demo
 
-<video src="https://raw.githubusercontent.com/ramihuunguyen/FlowBot/main/FlowBotDemo.mp4" controls playsinline width="100%">
-  <a href="https://github.com/ramihuunguyen/FlowBot/blob/main/FlowBotDemo.mp4">Download the demo video</a>
-</video>
+
+https://github.com/user-attachments/assets/4ed22488-1dd3-4e64-b3f9-661713172a2a
+
 
 ### What makes us unique:
 
