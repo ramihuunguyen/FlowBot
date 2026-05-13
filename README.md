@@ -41,9 +41,10 @@ If you want to go deeper on *how* we built FlowBot, reach out to us.
 
 ## Connect with us:
 
-- **Rami Huu Nguyen**: say hi to me on LinkedIn or book time to chat about the project at my email address: rami.nguyen12@gmail.com  
+- **Rami Huu Nguyen**: say hi to me on [LinkedIn]([url](https://www.linkedin.com/in/ramihuunguyen/)) or book time to chat about the project at my email address: rami.nguyen12@gmail.com
 
-- **Ajanee Igharo** (our communicator) and the team, more on the project and what we’re learning  
+
+- **[Ajanee Igharo]([url](https://www.linkedin.com/in/ajaneeigharo/))** (our communicator) and the team, more on the project and what we’re learning  
 
 We’re building in the open as a **community and learning** effort: sharing ideas and knowledge, growing together, and **not** publishing private source code publicly. 
 
