@@ -43,10 +43,10 @@ If you want to go deeper on *how* we built FlowBot, reach out to us.
 
 - **Rami Huu Nguyen**: say hi to me on LinkedIn or book time to chat about the project at my email address: rami.nguyen12@gmail.com  
 
-- **Ajanee Igharo** (communicator) and the team, more on the project and what we’re learning  
+- **Ajanee Igharo** (our communicator) and the team, more on the project and what we’re learning  
 
 We’re building in the open as a **community and learning** effort: sharing ideas and knowledge, growing together, and **not** publishing private source code publicly. 
 
 Everything is open for **discussion, inspiration, and learning**.
 
-*Hobby project — focused on learning, creativity, and collaboration.*
+*This is our Hobby project *focused on learning, creativity, and collaboration.*
