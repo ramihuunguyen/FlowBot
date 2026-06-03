@@ -17,7 +17,6 @@
   <img src="https://img.shields.io/badge/SQLite-3-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite"/>
   <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
   <img src="https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite"/>
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License"/>
 </p>
 
 <p align="center">
@@ -432,6 +431,3 @@ Built at **UMass Boston** — CS 438/638, Spring 2026, with the guidance of Comp
   Open an issue or reach out to any team member.
 </p>
 
----
-
-<p align="center">MIT License</p>
