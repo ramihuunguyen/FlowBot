@@ -72,22 +72,6 @@ FlowBot solve all user's problem with two specific functions:
 
 ---
 
-5. ## Features
-
-<p align="center">
-  <img src="assets/page2_modes.png" alt="FlowBot covers Bus, Parking, Car, Train, Bike, and Walking" width="700"/>
-</p>
-
-| | Feature | What It Does |
-
-|---|---|---|
-| :bus: | **Bus & Train** | Real-time MBTA schedules, route options, service alerts |
-| :car: | **Driving** | Traffic-aware directions with time and cost estimates |
-| :parking: | **Parking + Sign Reader** | Upload a photo of any parking sign and get a plain-English answer plus nearby alternatives |
-| :bike: | **Biking** | Live Bluebikes station availability (bikes and open docks) |
-| :walking: | **Walking** | Walkable route suggestions with distance and time |
-| :bar_chart: | **Smart Comparison** | Side-by-side breakdown across all modes for the same trip |
-
 ## Demo
 
 <p align="center">
