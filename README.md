@@ -5,8 +5,7 @@
 <h1 align="center">FlowBot</h1>
 
 <p align="center">
-  <strong>Your easy guide to getting around Boston</strong><br>
-  One conversation replaces five application.
+  <strong>Your RAG-based navigation chatbot getting around Boston</strong><br>
 </p>
 
 <p align="center">
