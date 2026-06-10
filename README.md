@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Your easy guide to getting around Boston</strong><br>
-  One conversation replaces five apps.
+  One conversation replaces five application.
 </p>
 
 <p align="center">
@@ -39,14 +39,13 @@
 
 ## What is FlowBot?
 
-FlowBot is a conversational chatbot that helps you navigate Boston using **buses, trains, bikes, walking, and driving**, all in one place. Instead of switching between MBTA, Google Maps, Bluebikes, and parking apps, you ask FlowBot a single question and get a clear, sourced answer comparing your options.
+FlowBot, a RAG-based navigation chatbot, is an navigation chatbot that guides you to navigate Boston using **buses, trains, bikes, walking, and driving**, all in one place. Instead of switching between MBTA, Google Maps, Bluebikes, and parking apps, you could  FlowBot a single question and get a clear, sourced answer comparing your options.
 
 > *"I want to commute to Boston now."*
 >
-> FlowBot compares routes across every mode (time, cost, and convenience) so you can pick the best one.
+> FlowBot, a RAG-based navigation chatbot, also make comparision between routes across every  transportation mode, including time, cost, and convenience so you can pick the optimal solution.
 
-This is a **showcase repository**. We share our design, architecture, and data sources openly as a learning resource. Source code is maintained privately.
-
+RAG, stands for Retrieval-Augmented Generation, a GenAI (Gen) Framework augments Large Language Models with our scraped data from multiple sources to help AI-powered software, such as chatbots, communicate more effectively with users.
 ---
 
 ## Features
@@ -72,11 +71,12 @@ This is a **showcase repository**. We share our design, architecture, and data s
   <img src="assets/page3_problems.png" alt="Problems: Unreliable Transit Timing, Unclear Parking Rules, Fragmented Information" width="700"/>
 </p>
 
-Getting around Boston means juggling multiple disconnected apps and sources:
+We had an informal discussion for the group of students, who are currently studying and living in Boston area. There are several key problems we identified:
 
-- **Unreliable Transit Timing.** Schedules change, delays happen, and you don't find out until you're already waiting.
-- **Unclear Parking Rules.** Signs are confusing, rules overlap, and a wrong guess means a ticket.
-- **Fragmented Information.** Bus routes on one app, bike stations on another, parking on a third, and no clear options for walking or driving. No single place compares them all.
+1. Google map does not have information of shuttle bus.
+2. There is a need to integrate BlueBike with the current application, and an application where users can scan, and get information immediately. For instance, users prefer an application where they can see both paid, and free option.
+3. Parking Sign sometimes provide misleading information, which make people confused.
+4. Users also desire to have an application to suggest best routes, and potential delays. Users sometimes get confused on number of busses, its schedule as well.
 
 ---
 
@@ -399,7 +399,10 @@ Built at **UMass Boston** — CS 438/638, Spring 2026, with the guidance of Comp
 **Reranker (BGE-Reranker-v2-M3):**
 
 - Xiao, S. et al. (2024). *C-Pack: Packed Resources For General Chinese Embeddings.* SIGIR 2024. [arXiv:2309.07597](https://arxiv.org/abs/2309.07597)
+  
 - Chen, J. et al. (2024). *BGE M3-Embedding: Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation.* [arXiv:2402.03216](https://arxiv.org/abs/2402.03216)
+
+- https://www.k2view.com/blog/rag-chatbot/ 
 
 **Keyword Search:**
 
