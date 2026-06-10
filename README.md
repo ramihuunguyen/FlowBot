@@ -35,8 +35,6 @@
   <a href="#references">References</a>
 </p>
 
----
-
 ## What is FlowBot?
 
 FlowBot, a RAG-based navigation chatbot, is an navigation chatbot that guides you to navigate Boston using **buses, trains, bikes, walking, and driving**, all in one place. Instead of switching between MBTA, Google Maps, Bluebikes, and parking apps, you could  FlowBot a single question and get a clear, sourced answer comparing your options.
@@ -45,25 +43,7 @@ FlowBot, a RAG-based navigation chatbot, is an navigation chatbot that guides yo
 >
 > FlowBot, a RAG-based navigation chatbot, also make comparision between routes across every  transportation mode, including time, cost, and convenience so you can pick the optimal solution.
 
-RAG, stands for Retrieval-Augmented Generation, a GenAI (Gen) Framework augments Large Language Models with our scraped data from multiple sources to help AI-powered software, such as chatbots, communicate more effectively with users.
----
-
-## Features
-
-<p align="center">
-  <img src="assets/page2_modes.png" alt="FlowBot covers Bus, Parking, Car, Train, Bike, and Walking" width="700"/>
-</p>
-
-| | Feature | What It Does |
-|---|---|---|
-| :bus: | **Bus & Train** | Real-time MBTA schedules, route options, service alerts |
-| :car: | **Driving** | Traffic-aware directions with time and cost estimates |
-| :parking: | **Parking + Sign Reader** | Upload a photo of any parking sign and get a plain-English answer plus nearby alternatives |
-| :bike: | **Biking** | Live Bluebikes station availability (bikes and open docks) |
-| :walking: | **Walking** | Walkable route suggestions with distance and time |
-| :bar_chart: | **Smart Comparison** | Side-by-side breakdown across all modes for the same trip |
-
----
+> RAG, stands for Retrieval-Augmented Generation, a GenAI (Gen) Framework augments Large Language Models with our scraped data from multiple sources to help AI-powered software, such as chatbots, communicate more effectively with users.
 
 ## The Problem
 
@@ -78,26 +58,35 @@ We had an informal discussion for the group of students, who are currently study
 3. Parking Sign sometimes provide misleading information, which make people confused.
 4. Users also desire to have an application to suggest best routes, and potential delays. Users sometimes get confused on number of busses, its schedule as well.
 
----
-
 ## Our Solution
 
 <p align="center">
   <img src="assets/page4_solutions.png" alt="Solutions: Route Planner, Parking + Sign Reader, Multi-Modal Urban Intelligence" width="700"/>
 </p>
 
-FlowBot addresses each problem with a specific capability:
+FlowBot solve all user's problem with two specific functions:
 
-**01. Route Planner**
-Compare time and cost across bus, train, bike, walking, and driving for any trip. One question, all options.
+- The first function is named as Route Planner, where the chatbot enables users to interact with chatbot to perform the comparision between each transporation model instantly. 
 
-**02. Parking + Sign Reader**
-Upload a photo of a parking sign and get an instant, plain-English explanation, plus nearby alternatives if you can't park there.
-
-**03. Multi-Modal Urban Intelligence**
-A unified conversational interface that combines transit, buses, biking, walking, and driving into a single answer grounded in real data.
+- The second function is called Parking and Sign Reader. Users can upload a photo of parking sign into FlowBot, and they can receive an instant information from the website.
 
 ---
+
+5. ## Features
+
+<p align="center">
+  <img src="assets/page2_modes.png" alt="FlowBot covers Bus, Parking, Car, Train, Bike, and Walking" width="700"/>
+</p>
+
+| | Feature | What It Does |
+
+|---|---|---|
+| :bus: | **Bus & Train** | Real-time MBTA schedules, route options, service alerts |
+| :car: | **Driving** | Traffic-aware directions with time and cost estimates |
+| :parking: | **Parking + Sign Reader** | Upload a photo of any parking sign and get a plain-English answer plus nearby alternatives |
+| :bike: | **Biking** | Live Bluebikes station availability (bikes and open docks) |
+| :walking: | **Walking** | Walkable route suggestions with distance and time |
+| :bar_chart: | **Smart Comparison** | Side-by-side breakdown across all modes for the same trip |
 
 ## Demo
 
