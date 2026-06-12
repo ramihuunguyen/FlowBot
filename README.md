@@ -293,11 +293,11 @@ FlowBot's system prompt instructs the LLM to act as a smart transportation exper
 
 ## Limitations
 
-- **Boston only.** FlowBot is built for the Boston metro area. It does not cover other cities or regions.
-- **Real-time data depends on external APIs.** MBTA, Bluebikes, and Mass511 data are only as current as their respective APIs allow. Outages or delays on those services affect FlowBot's answers.
-- **Parking sign reader depends on image quality.** Blurry, cropped, or poorly lit photos may produce inaccurate interpretations.
-- **LLM generation is not guaranteed to be perfect.** Despite RAG grounding and source citation, the LLM may occasionally misinterpret retrieved passages or omit relevant details.
-- **No user accounts or saved trips.** Each conversation starts fresh with no history or personalization.
+- FlowBot only works for the Boston metro area and does not cover other cities.
+- We have used external APIs including MBTA, Bluebikes, and Mass511 to get real-time data. The problem this might cause is that if these services are down or experiencing delays, FlowBot will also be affected since it depends on these services.
+- The parking sign reader requires a clear photo to work effectively, meaning blurry or cut-off images would cause the sign reader to not work correctly.
+- Although we use RAG system to limit the answers to real data and cite sources appropriately, large language models are not perfect themselves, and can still make mistakes or occasionally miss details.
+- We do not have any user accounts and hence every conversation starts from new and has no saved history - the experience cannot be personalized as a result.
 
 ---
 
