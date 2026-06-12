@@ -262,21 +262,19 @@ def build_context(passage_entries, db_name):
 
 ## Data Sources
 
-FlowBot pulls from **11 public data sources**. No paid APIs required.
+We collected data from 11 different public sources, scraping the data from the public websites. FlowBot did not use any paid APIs and all our sources are categorized below:
 
-| Source | What It Provides | Records |
-|---|---|---|
-| MBTA Routes API | All 177 bus, subway, commuter rail, and ferry routes | 177 |
-| MBTA Stops API | Every stop and station across the network | 10,268 |
-| Bluebikes GBFS Feed | 596 bike-share stations with real-time availability | 596 |
-| MBTA Accessibility Pages | Accessibility info for stations and services | Web scrape |
-| Boston Transportation Dept | City transportation policies and updates | Web scrape |
-| Boston Parking Info | Parking regulations, meters, and resident permits | Web scrape |
-| Parking/Road Sign Explanations | Plain-English explanations for 15 common sign types | Curated |
-| Mass511 Traffic Incidents | Real-time traffic incidents and road closures | API/Scrape |
-| Overpass API (Walking Paths) | Pedestrian paths, sidewalks, and walking routes | API fetch |
-| Boston Data Portal | Traffic signals, Vision Zero crash data | API fetch |
-| MA Driver's Manual | 62 pages of sign rules and driving regulations | PDF extraction |
+**Transit:** We extracted route and stop data using the MBTA Routes and Stops APIs which gave us 177 routes (buses, subways, commuter rails, and ferry routes) and 10,268 stops and stations. Furthermore, we extracted station accessibility information from their accessibility pages.
+
+**Biking:** We used the Bluebikes GBFS feed to get real-time data about availability from 596 bike sharing stations.
+
+**Parking and Signs:** We found relevant information about parking regulations, parking meters and resident permits from the city of Boston, we then wrote easy to understand English explanations for 15 common sign types and then extracted 62 pages of sign rules from the Massachusetts Driver's manual using PDF extraction.
+
+**Driving and Traffic:** We get real-time incidents and road closures data from Mass511 Traffic incidents and traffic signal and traffic crash data from the Boston Data portal.
+
+**Walking:** We used the Overpass API to get pedestrian paths, sidewalks and walking routes.
+
+**City Policy:** We retrieved general transportation policies and updates from the Boston Transportation Department.
 
 ---
 
