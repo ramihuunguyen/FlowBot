@@ -303,11 +303,11 @@ FlowBot's system prompt instructs the LLM to act as a smart transportation exper
 
 ## Future Work
 
-- **Live location support.** Allow users to share their location for automatic "from here" routing instead of typing an origin.
-- **Conversation memory.** Save past trips and preferences so FlowBot can learn commute patterns and suggest faster options over time.
-- **Multi-city expansion.** Generalize the data pipeline to support other cities with public transit APIs (e.g., New York MTA, Chicago CTA).
-- **Real-time alerts and notifications.** Proactively notify users of service disruptions, delays, or parking restrictions on their saved routes.
-- **Evaluation framework.** Implement a structured evaluation plan to measure retrieval accuracy, answer quality, and user satisfaction (see [Evaluation Plan](#evaluation-plan)).
+- Add a feature to allow users to share their current location so that FlowBot can use it as the starting point, rather than having to manually type in where they currently are.
+- Add a memory feature so FlowBot can remember past trips and user preferences from conversations, leading to FlowBot learning from memory and commute patterns and suggesting better options over time.
+- Expand FlowBot's functionality to multiple cities that also offer public transit APIs such as New York city or Chicago.
+- Add a feature to provide real time alerts and notifications, notifying users about disruptions in service, delays or parking restrictions on regularly commuted roads.
+- Build out a structured evaluation framework to effectively measure how well the retrieval and answer generations are actually performing and also add a feature to track user satisfaction. For further information on this, check out the [Evaluation Plan](#evaluation-plan) section.
 
 ---
 
