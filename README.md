@@ -30,8 +30,8 @@
   <a href="#limitations">Limitations</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
   <a href="#future-work">Future Work</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
   <a href="#evaluation-plan">Evaluation Plan</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-  <a href="#team">Team</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-  <a href="#references">References</a>
+  <a href="#references">References</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+  <a href="#team">Team</a>
 </p>
 
 ## What is FlowBot?
@@ -344,19 +344,6 @@ This evaluation plan is not yet implemented for FlowBot and is planned as future
 
 ---
 
-## Team
-
-Built at **UMass Boston** — CS 438/638, Spring 2026, with the guidance of Computer Science Professor **Wei Ding**.
-
-| | |
-|---|---|
-| **[Rami Huu Nguyen](https://www.linkedin.com/in/ramihuunguyen)** | **[Justin J McMahon](https://www.linkedin.com/in/justin-mcmahon-b17b9140a)** |
-| **[Domenic B DiClemente](https://www.linkedin.com/in/domenic-diclemente-76a047262)** | **[Igor Ten](https://www.linkedin.com/in/igor-ten-103748344)** |
-| **[Ajanee T Igharo](https://www.linkedin.com/in/ajaneeigharo)** | **[MeghSanjaykumar Patel](https://in.linkedin.com/in/megh-patel-006900214)** |
-| **Felipe Mahecha** | **[Syed Taswar Mahbub](https://www.linkedin.com/in/syed-taswar-mahbub-272267183)** |
-
----
-
 ## References
 
 **Core Architecture:**
@@ -394,6 +381,59 @@ Built at **UMass Boston** — CS 438/638, Spring 2026, with the guidance of Comp
 | BeautifulSoup4 | [crummy.com/software/BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) |
 | pdfplumber | [github.com/jsvine/pdfplumber](https://github.com/jsvine/pdfplumber) |
 | OpenRouter | [openrouter.ai](https://openrouter.ai/docs/quickstart) |
+
+---
+
+## Team
+
+Built at **UMass Boston** — CS 438/638, Spring 2026, with the guidance of Computer Science Professor **Wei Ding**.
+
+<table>
+<tr>
+<td align="center" width="250">
+<img src="assets/team/rami.png" width="120" alt="Rami Huu Nguyen"/><br>
+<strong><a href="https://www.linkedin.com/in/ramihuunguyen">Rami Huu Nguyen</a></strong><br>
+<em>TODO: Add description</em>
+</td>
+<td align="center" width="250">
+<img src="assets/team/justin.png" width="120" alt="Justin J McMahon"/><br>
+<strong><a href="https://www.linkedin.com/in/justin-mcmahon-b17b9140a">Justin J McMahon</a></strong><br>
+<em>TODO: Add description</em>
+</td>
+<td align="center" width="250">
+<img src="assets/team/domenic.png" width="120" alt="Domenic B DiClemente"/><br>
+<strong><a href="https://www.linkedin.com/in/domenic-diclemente-76a047262">Domenic B DiClemente</a></strong><br>
+<em>TODO: Add description</em>
+</td>
+<td align="center" width="250">
+<img src="assets/team/igor.png" width="120" alt="Igor Ten"/><br>
+<strong><a href="https://www.linkedin.com/in/igor-ten-103748344">Igor Ten</a></strong><br>
+<em>TODO: Add description</em>
+</td>
+</tr>
+<tr>
+<td align="center" width="250">
+<img src="assets/team/ajanee.png" width="120" alt="Ajanee T Igharo"/><br>
+<strong><a href="https://www.linkedin.com/in/ajaneeigharo">Ajanee T Igharo</a></strong><br>
+<em>TODO: Add description</em>
+</td>
+<td align="center" width="250">
+<img src="assets/team/megh.png" width="120" alt="MeghSanjaykumar Patel"/><br>
+<strong><a href="https://in.linkedin.com/in/megh-patel-006900214">MeghSanjaykumar Patel</a></strong><br>
+<em>TODO: Add description</em>
+</td>
+<td align="center" width="250">
+<img src="assets/team/felipe.png" width="120" alt="Felipe Mahecha"/><br>
+<strong><a href="https://www.linkedin.com/in/felipe-m-b31484217">Felipe Mahecha</a></strong><br>
+<em>TODO: Add description</em>
+</td>
+<td align="center" width="250">
+<img src="assets/team/taswar.png" width="120" alt="Syed Taswar Mahbub"/><br>
+<strong><a href="https://www.linkedin.com/in/syed-taswar-mahbub-272267183">Syed Taswar Mahbub</a></strong><br>
+<em>TODO: Add description</em>
+</td>
+</tr>
+</table>
 
 ---
 
