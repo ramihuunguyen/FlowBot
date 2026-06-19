@@ -139,7 +139,7 @@ A quick look at the data, retrieval setup, and search components inside FlowBot:
 
 ### Pipeline Code Snippets
 
-**Query Expansion** — FlowBot uses query expansion to make user searches more specific before they are embedded. When a user asks something like “how do I get to,” “best way to,” or “where can I park,” FlowBot checks the query for certain keywords and adds topic-specific transportation terms behind the scenes.
+**Query Expansion**: FlowBot uses query expansion to make user searches more specific before they are embedded. When a user asks something like “how do I get to,” “best way to,” or “where can I park,” FlowBot checks the query for certain keywords and adds topic-specific transportation terms behind the scenes.
 
 ```python
 QUERY_HINTS = {
@@ -165,7 +165,7 @@ def expand_query(self, query):
     return query
 ```
 
-**Vector Search** — FlowBot uses vector search to find the passages that are most similar to the user’s question. After the query is expanded, FlowBot turns it into an embedding, a numerical representation of the query. It then compares that query embedding against the stored passage embeddings using cosine similarity. The passages with the highest similarity scores are returned as the most relevant results.
+**Vector Search**: FlowBot uses vector search to find the passages that are most similar to the user’s question. After the query is expanded, FlowBot turns it into an embedding, a numerical representation of the query. It then compares that query embedding against the stored passage embeddings using cosine similarity. The passages with the highest similarity scores are returned as the most relevant results.
 
 ```python
 def search(self, query, k=5):
@@ -181,7 +181,7 @@ def search(self, query, k=5):
     return results
 ```
 
-**BM25 Keyword Search** — FlowBot uses BM25 keyword search to catch exact words or phrases that vector search might miss. While vector search is good for finding passages with similar meaning, BM25 focuses more on lexical matching, meaning it looks for the actual terms in the user’s query. This is useful in conjunction with vector search because it helps FlowBot retrieve results based on both meaning and exact wording.
+**BM25 Keyword Search**: FlowBot uses BM25 keyword search to catch exact words or phrases that vector search might miss. While vector search is good for finding passages with similar meaning, BM25 focuses more on lexical matching, meaning it looks for the actual terms in the user’s query. This is useful in conjunction with vector search because it helps FlowBot retrieve results based on both meaning and exact wording.
 
 ```python
 def search(self, query, k=10):
@@ -198,7 +198,7 @@ def search(self, query, k=10):
     return results
 ```
 
-**Deduplication** — FlowBot merges vector search and BM25 results while removing duplicate passages. Vector results are prioritized first, then any unique BM25 results are added after.
+**Deduplication**: FlowBot merges vector search and BM25 results while removing duplicate passages. Vector results are prioritized first, then any unique BM25 results are added after.
 
 ```python
 def deduplicate_passages(keyword_results, vector_results):
@@ -217,7 +217,7 @@ def deduplicate_passages(keyword_results, vector_results):
     return unique_results
 ```
 
-**Cross-Encoder Reranking** — FlowBot uses **BGE-Reranker-v2-M3** to re-rank the retrieved passages after vector search and BM25 search. Vector search quickly finds passages that are generally similar to the query, but the reranker looks more closely at each full query-and-passage pair. This helps FlowBot sort the results more accurately and utilize only the most useful transportation information correlating to the users query.
+**Cross-Encoder Reranking**: FlowBot uses **BGE-Reranker-v2-M3** to re-rank the retrieved passages after vector search and BM25 search. Vector search quickly finds passages that are generally similar to the query, but the reranker looks more closely at each full query-and-passage pair. This helps FlowBot sort the results more accurately and utilize only the most useful transportation information correlating to the users query.
 
 ```python
 def rerank_passages(self, query, results, k=10):
@@ -238,7 +238,7 @@ def rerank_passages(self, query, results, k=10):
     return reranked_passages
 ```
 
-**Context Builder** — FlowBot uses a context builder to turn the top retrieved passages into a structured context section for the model message. After the previous steps, FlowBot pulls their metadata from the database like title, source type, URL, and passage text. This lets the LLM generate an answer using organized source material and utilizing the ordering produced in the reranker step.
+**Context Builder**: FlowBot uses a context builder to turn the top retrieved passages into a structured context section for the model message. After the previous steps, FlowBot pulls their metadata from the database like title, source type, URL, and passage text. This lets the LLM generate an answer using organized source material and utilizing the ordering produced in the reranker step.
 
 ```python
 def build_context(passage_entries, db_name):
