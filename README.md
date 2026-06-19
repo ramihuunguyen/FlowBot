@@ -95,7 +95,9 @@ FlowBot solve all user's problem with two specific functions:
 
 ## Architecture
 
-FlowBot uses a **Retrieval-Augmented Generation (RAG)** pipeline. Every answer is grounded in real data, not hallucinated.
+FlowBot uses a **Retrieval-Augmented Generation (RAG)** pipeline. The main goal is that every answer is grounded in real data instead of just being generated randomly or hallucinated. Rather than being a model focused on only one specific area, FlowBot retrieves relevant transportation information, including static data and real-time API data, organizes that information in our database, and then uses it as context to generate a grounded response or route for the user. Sources are also included so users can see where the information came from and to help prevent hallucinations.
+
+
 
 ```
 User Question
@@ -123,8 +125,9 @@ LLM Generation ────── Structured answer with cited sources
      v
 Response ──────────── Main answer (max 100 words) + source links
 ```
+### FlowBot System & Data Overview
 
-**By the numbers:**
+A quick look at the data, retrieval setup, and search components inside FlowBot:
 
 | Metric | Value |
 |---|---|
@@ -136,7 +139,7 @@ Response ──────────── Main answer (max 100 words) + sour
 
 ### Pipeline Code Snippets
 
-**Query Expansion** — appends topic-specific keywords to the user's query before embedding:
+**Query Expansion** — FlowBot uses query expansion to make user searches more specific before they are embedded. When a user asks something like “how do I get to,” “best way to,” or “where can I park,” FlowBot checks the query for certain keywords and adds topic-specific transportation terms behind the scenes.
 
 ```python
 QUERY_HINTS = {
@@ -162,7 +165,7 @@ def expand_query(self, query):
     return query
 ```
 
-**Vector Search** — encodes the expanded query and finds the most similar passages by cosine similarity:
+**Vector Search** — FlowBot uses vector search to find the passages that are most similar to the user’s question. After the query is expanded, FlowBot turns it into an embedding, a numerical representation of the query. It then compares that query embedding against the stored passage embeddings using cosine similarity. The passages with the highest similarity scores are returned as the most relevant results.
 
 ```python
 def search(self, query, k=5):
@@ -178,7 +181,7 @@ def search(self, query, k=5):
     return results
 ```
 
-**BM25 Keyword Search** — lexical matching to catch exact terms that semantic search might miss:
+**BM25 Keyword Search** — FlowBot uses BM25 keyword search to catch exact words or phrases that vector search might miss. While vector search is good for finding passages with similar meaning, BM25 focuses more on lexical matching, meaning it looks for the actual terms in the user’s query. This is useful in conjunction with vector search because it helps FlowBot retrieve results based on both meaning and exact wording.
 
 ```python
 def search(self, query, k=10):
@@ -195,7 +198,7 @@ def search(self, query, k=10):
     return results
 ```
 
-**Deduplication** — merges results from both searches, prioritizing vector results:
+**Deduplication** — FlowBot merges vector search and BM25 results while removing duplicate passages. Vector results are prioritized first, then any unique BM25 results are added after.
 
 ```python
 def deduplicate_passages(keyword_results, vector_results):
@@ -214,7 +217,7 @@ def deduplicate_passages(keyword_results, vector_results):
     return unique_results
 ```
 
-**Cross-Encoder Reranking** — re-scores each (query, passage) pair for more accurate ranking:
+**Cross-Encoder Reranking** — FlowBot uses **BGE-Reranker-v2-M3** to re-rank the retrieved passages after vector search and BM25 search. Vector search quickly finds passages that are generally similar to the query, but the reranker looks more closely at each full query-and-passage pair. This helps FlowBot sort the results more accurately and utilize only the most useful transportation information correlating to the users query.
 
 ```python
 def rerank_passages(self, query, results, k=10):
@@ -235,7 +238,7 @@ def rerank_passages(self, query, results, k=10):
     return reranked_passages
 ```
 
-**Context Builder** — formats the top passages with metadata into a context string for the LLM:
+**Context Builder** — FlowBot uses a context builder to turn the top retrieved passages into a structured context section for the model message. After the previous steps, FlowBot pulls their metadata from the database like title, source type, URL, and passage text. This lets the LLM generate an answer using organized source material and utilizing the ordering produced in the reranker step.
 
 ```python
 def build_context(passage_entries, db_name):
@@ -259,7 +262,6 @@ def build_context(passage_entries, db_name):
 ```
 
 ---
-
 ## Data Sources
 
 We collected data from 11 different public sources, scraping the data from the public websites. FlowBot did not use any paid APIs and all our sources are categorized below:
@@ -278,41 +280,16 @@ We collected data from 11 different public sources, scraping the data from the p
 
 ---
 
-## Prompt Overview
+## Prompt Design
 
-We designed our generation prompt by asking the LLM model to act as an expert in smart transportation.  
+FlowBot's system prompt instructs the LLM to act as a smart transportation expert and enforces a strict reasoning and output format:
 
-We also used the chain-of-though technique to instruct the model. For instance, we asked the model: before answering, think “step-by-step” for the solution.  
+- **Step-by-step reasoning.** Before generating an answer, the LLM must work through four steps: identify what the user is asking, select the most relevant retrieved passages, extract key facts from keyword hints, and then compose the response.
+- **Structured output.** Every response follows a fixed two-part format: a concise main answer (one paragraph, max 100 words) followed by a "Learn more from these sources" section with named, clickable links.
+- **Tone adaptation.** The prompt adjusts language based on the user: friendly and simple for students, formal and professional for job seekers.
+- **Scope enforcement.** The LLM only responds using knowledge from the retrieved context. Questions outside Boston transportation (personal life, entertainment, unrelated topics) receive a polite redirect rather than a hallucinated answer.
 
-We defined 4 specific steps for the model:  
-
-* What is the user asking?  
-* Which passages from the context are most relevant?  
-* What key facts from the keyword hints should the answer include?  
-* Then generate your answer following the output format?  
-
-In addition to the prompt technique, the model must be followed our format:  
-
-* The model must produce “one short paragraph, maximum 100 words, clear and direct explanation, no extra section inside the paragraph.”  
-
-We also asked the model to follow our language rule:  
-
-* If the user is a student, the model must use a friendly and simple tone to answer the question from the user.  
-* If the user is a job seeker or a professional, the model must use a formal and professional tone to answer the question from the user.  
-
-The special uniqueness of our prompt is about the model’s limitation, where we asked if the model must use the scraped data to answer user’s questions, and not generate fake information.  
-
-* In addition, we also use the constraint prompt technique, where we specify what the answer format looks like. For instance:
-
-Main Answer
-
-[One short paragraph, max 100 words]
-
-Learn more from these sources
-
-Source Name 1 – [link]  
-Source Name 2 – [link]  
-Source Name 3 – [link]
+---
 
 ## Limitations
 
@@ -409,41 +386,51 @@ This evaluation plan is not yet implemented for FlowBot and is planned as future
 
 ## Team
 
-This project was created as a part of CS438/CS638 - Applied Machine Learning at **UMass Boston** under Professor **Wei Ding** as the faculty teaching this course.
+Built at **UMass Boston** — CS 438/638, Spring 2026, with the guidance of Computer Science Professor **Wei Ding**.
 
 <table>
 <tr>
 <td align="center" width="250">
 <img src="assets/team/rami.png" width="120" alt="Rami Huu Nguyen"/><br>
 <strong><a href="https://www.linkedin.com/in/ramihuunguyen">Rami Huu Nguyen</a></strong><br>
+<em>TODO: Add description</em>
 </td>
 <td align="center" width="250">
 <img src="assets/team/justin.png" width="120" alt="Justin J McMahon"/><br>
 <strong><a href="https://www.linkedin.com/in/justin-mcmahon-b17b9140a">Justin J McMahon</a></strong><br>
+<em>TODO: Add description</em>
 </td>
 <td align="center" width="250">
 <img src="assets/team/domenic.png" width="120" alt="Domenic B DiClemente"/><br>
 <strong><a href="https://www.linkedin.com/in/domenic-diclemente-76a047262">Domenic B DiClemente</a></strong><br>
+<em>TODO: Add description</em>
 </td>
 <td align="center" width="250">
+<img src="assets/team/igor.png" width="120" alt="Igor Ten"/><br>
 <strong><a href="https://www.linkedin.com/in/igor-ten-103748344">Igor Ten</a></strong><br>
+<em>TODO: Add description</em>
 </td>
 </tr>
 <tr>
 <td align="center" width="250">
 <img src="assets/team/ajanee.png" width="120" alt="Ajanee T Igharo"/><br>
 <strong><a href="https://www.linkedin.com/in/ajaneeigharo">Ajanee T Igharo</a></strong><br>
+<em>TODO: Add description</em>
 </td>
 <td align="center" width="250">
 <img src="assets/team/megh.png" width="120" alt="MeghSanjaykumar Patel"/><br>
 <strong><a href="https://in.linkedin.com/in/megh-patel-006900214">MeghSanjaykumar Patel</a></strong><br>
+<em>TODO: Add description</em>
 </td>
 <td align="center" width="250">
+<img src="assets/team/felipe.png" width="120" alt="Felipe Mahecha"/><br>
 <strong><a href="https://www.linkedin.com/in/felipe-m-b31484217">Felipe Mahecha</a></strong><br>
+<em>TODO: Add description</em>
 </td>
 <td align="center" width="250">
 <img src="assets/team/taswar.png" width="120" alt="Syed Taswar Mahbub"/><br>
 <strong><a href="https://www.linkedin.com/in/syed-taswar-mahbub-272267183">Syed Taswar Mahbub</a></strong><br>
+<em>TODO: Add description</em>
 </td>
 </tr>
 </table>
