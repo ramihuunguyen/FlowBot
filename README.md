@@ -409,7 +409,7 @@ This evaluation plan is not yet implemented for FlowBot and is planned as future
 
 ## Team
 
-Built at **UMass Boston** — CS 438/638, Spring 2026, with the guidance of Computer Science Professor **Wei Ding**.
+This project was created as a part of CS438/CS638 - Applied Machine Learning at **UMass Boston** under Professor **Wei Ding** as the faculty teaching this course.
 
 <table>
 <tr>
@@ -426,7 +426,6 @@ Built at **UMass Boston** — CS 438/638, Spring 2026, with the guidance of Comp
 <strong><a href="https://www.linkedin.com/in/domenic-diclemente-76a047262">Domenic B DiClemente</a></strong><br>
 </td>
 <td align="center" width="250">
-<img src="assets/team/igor.png" width="120" alt="Igor Ten"/><br>
 <strong><a href="https://www.linkedin.com/in/igor-ten-103748344">Igor Ten</a></strong><br>
 </td>
 </tr>
@@ -440,7 +439,6 @@ Built at **UMass Boston** — CS 438/638, Spring 2026, with the guidance of Comp
 <strong><a href="https://in.linkedin.com/in/megh-patel-006900214">MeghSanjaykumar Patel</a></strong><br>
 </td>
 <td align="center" width="250">
-<img src="assets/team/felipe.png" width="120" alt="Felipe Mahecha"/><br>
 <strong><a href="https://www.linkedin.com/in/felipe-m-b31484217">Felipe Mahecha</a></strong><br>
 </td>
 <td align="center" width="250">
