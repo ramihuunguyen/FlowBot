@@ -286,23 +286,23 @@ We also used the chain-of-though technique to instruct the model. For instance, 
 
 We defined 4 specific steps for the model:  
 
-What is the user asking?  
-Which passages from the context are most relevant?  
-What key facts from the keyword hints should the answer include?  
-Then generate your answer following the output format?  
+* What is the user asking?  
+* Which passages from the context are most relevant?  
+* What key facts from the keyword hints should the answer include?  
+* Then generate your answer following the output format?  
 
 In addition to the prompt technique, the model must be followed our format:  
 
-The model must produce “one short paragraph, maximum 100 words, clear and direct explanation, no extra section inside the paragraph.”  
+* The model must produce “one short paragraph, maximum 100 words, clear and direct explanation, no extra section inside the paragraph.”  
 
 We also asked the model to follow our language rule:  
 
-If the user is a student, the model must use a friendly and simple tone to answer the question from the user.  
-If the user is a job seeker or a professional, the model must use a formal and professional tone to answer the question from the user.  
+* If the user is a student, the model must use a friendly and simple tone to answer the question from the user.  
+* If the user is a job seeker or a professional, the model must use a formal and professional tone to answer the question from the user.  
 
 The special uniqueness of our prompt is about the model’s limitation, where we asked if the model must use the scraped data to answer user’s questions, and not generate fake information.  
 
-In addition, we also use the constraint prompt technique, where we specify what the answer format looks like.  
+* In addition, we also use the constraint prompt technique, where we specify what the answer format looks like.  
 
 ## Main Answer
 
