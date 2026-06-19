@@ -302,13 +302,13 @@ We also asked the model to follow our language rule:
 
 The special uniqueness of our prompt is about the model’s limitation, where we asked if the model must use the scraped data to answer user’s questions, and not generate fake information.  
 
-* In addition, we also use the constraint prompt technique, where we specify what the answer format looks like.  
+* In addition, we also use the constraint prompt technique, where we specify what the answer format looks like. For instance:
 
-## Main Answer
+Main Answer
 
 [One short paragraph, max 100 words]
 
-## Learn more from these sources
+Learn more from these sources
 
 Source Name 1 – [link]  
 Source Name 2 – [link]  
