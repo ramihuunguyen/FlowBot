@@ -419,34 +419,42 @@ This project was created as a part of CS438/CS638 - Applied Machine Learning at 
 <td align="center" width="250">
 <img src="assets/team/rami.png" width="120" alt="Rami Huu Nguyen"/><br>
 <strong><a href="https://www.linkedin.com/in/ramihuunguyen">Rami Huu Nguyen</a></strong><br>
+<a href="mailto:HuuThanhVy.Nguyen001@umb.edu">HuuThanhVy.Nguyen001@umb.edu</a>
 </td>
 <td align="center" width="250">
 <img src="assets/team/justin.png" width="120" alt="Justin J McMahon"/><br>
 <strong><a href="https://www.linkedin.com/in/justin-mcmahon-b17b9140a">Justin J McMahon</a></strong><br>
+<a href="mailto:Justin.McMahon001@umb.edu">Justin.McMahon001@umb.edu</a>
 </td>
 <td align="center" width="250">
 <img src="assets/team/domenic.png" width="120" alt="Domenic B DiClemente"/><br>
 <strong><a href="https://www.linkedin.com/in/domenic-diclemente-76a047262">Domenic B DiClemente</a></strong><br>
+<a href="mailto:D.DiClemente001@umb.edu">D.DiClemente001@umb.edu</a>
 </td>
 <td align="center" width="250">
 <strong><a href="https://www.linkedin.com/in/igor-ten-103748344">Igor Ten</a></strong><br>
+<a href="mailto:Igor.Ten001@umb.edu">Igor.Ten001@umb.edu</a>
 </td>
 </tr>
 <tr>
 <td align="center" width="250">
 <img src="assets/team/ajanee.png" width="120" alt="Ajanee T Igharo"/><br>
 <strong><a href="https://www.linkedin.com/in/ajaneeigharo">Ajanee T Igharo</a></strong><br>
+<a href="mailto:Ajanee.Igharo001@umb.edu">Ajanee.Igharo001@umb.edu</a>
 </td>
 <td align="center" width="250">
 <img src="assets/team/megh.png" width="120" alt="MeghSanjaykumar Patel"/><br>
 <strong><a href="https://in.linkedin.com/in/megh-patel-006900214">MeghSanjaykumar Patel</a></strong><br>
+<a href="mailto:M.Patel027@umb.edu">M.Patel027@umb.edu</a>
 </td>
 <td align="center" width="250">
 <strong><a href="https://www.linkedin.com/in/felipe-m-b31484217">Felipe Mahecha</a></strong><br>
+<a href="mailto:Felipe.Mahecha001@umb.edu">Felipe.Mahecha001@umb.edu</a>
 </td>
 <td align="center" width="250">
 <img src="assets/team/taswar.png" width="120" alt="Syed Taswar Mahbub"/><br>
 <strong><a href="https://www.linkedin.com/in/syed-taswar-mahbub-272267183">Syed Taswar Mahbub</a></strong><br>
+<a href="mailto:SyedTaswar.Mahbub001@umb.edu">SyedTaswar.Mahbub001@umb.edu</a>
 </td>
 </tr>
 </table>
