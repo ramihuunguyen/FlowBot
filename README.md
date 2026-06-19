@@ -278,16 +278,41 @@ We collected data from 11 different public sources, scraping the data from the p
 
 ---
 
-## Prompt Design
+## Prompt Overview
 
-FlowBot's system prompt instructs the LLM to act as a smart transportation expert and enforces a strict reasoning and output format:
+We designed our generation prompt by asking the LLM model to act as an expert in smart transportation.  
 
-- **Step-by-step reasoning.** Before generating an answer, the LLM must work through four steps: identify what the user is asking, select the most relevant retrieved passages, extract key facts from keyword hints, and then compose the response.
-- **Structured output.** Every response follows a fixed two-part format: a concise main answer (one paragraph, max 100 words) followed by a "Learn more from these sources" section with named, clickable links.
-- **Tone adaptation.** The prompt adjusts language based on the user: friendly and simple for students, formal and professional for job seekers.
-- **Scope enforcement.** The LLM only responds using knowledge from the retrieved context. Questions outside Boston transportation (personal life, entertainment, unrelated topics) receive a polite redirect rather than a hallucinated answer.
+We also used the chain-of-though technique to instruct the model. For instance, we asked the model: before answering, think “step-by-step” for the solution.  
 
----
+We defined 4 specific steps for the model:  
+
+What is the user asking?  
+Which passages from the context are most relevant?  
+What key facts from the keyword hints should the answer include?  
+Then generate your answer following the output format?  
+
+In addition to the prompt technique, the model must be followed our format:  
+
+The model must produce “one short paragraph, maximum 100 words, clear and direct explanation, no extra section inside the paragraph.”  
+
+We also asked the model to follow our language rule:  
+
+If the user is a student, the model must use a friendly and simple tone to answer the question from the user.  
+If the user is a job seeker or a professional, the model must use a formal and professional tone to answer the question from the user.  
+
+The special uniqueness of our prompt is about the model’s limitation, where we asked if the model must use the scraped data to answer user’s questions, and not generate fake information.  
+
+In addition, we also use the constraint prompt technique, where we specify what the answer format looks like.  
+
+## Main Answer
+
+[One short paragraph, max 100 words]
+
+## Learn more from these sources
+
+Source Name 1 – [link]  
+Source Name 2 – [link]  
+Source Name 3 – [link]
 
 ## Limitations
 
